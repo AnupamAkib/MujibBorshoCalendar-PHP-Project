@@ -1,0 +1,120 @@
+<center>
+<font size='5'>আজকের মুজিববর্ষ তারিখ<hr>
+
+<?php
+
+date_default_timezone_set('Asia/Dhaka');
+$digit = array("০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯");
+$month = array("স্বাধীনতা", "শপথ", "বেতারযুদ্ধ", "যুদ্ধ", "শোক", "কৌশলযুদ্ধ", "আকাশযুদ্ধ", "জেলহত্যা", "বিজয়", "ফিরেআসা", "নবযাত্রা", "ভাষা");
+$day = array("০১", "০২", "০৩", "০৪", "০৫", "০৬", "০৭", "০৮", "০৯", "১০", "১১", "১২", "১৩", "১৪", "১৫", "১৬", "১৭", "১৮", "১৯", "২০", "২১", "২২", "২৩", "২৪", "২৫", "২৬", "২৭", "২৮", "২৯", "৩০", "৩১");
+
+//get current English date
+$cDay = date("d");
+$cMonth = date("m");
+$cYear = date("y");
+
+
+//get the MUJIB month
+if(($cDay>=17 && $cMonth==3) || ($cDay<17 && $cMonth==4)){
+    $mujibMonth = 0;
+}
+else if(($cDay>=17 && $cMonth==4) || ($cDay<17 && $cMonth==5)){
+    $mujibMonth = 1;
+}
+else if(($cDay>=17 && $cMonth==5) || ($cDay<17 && $cMonth==6)){
+    $mujibMonth = 2;
+}
+else if(($cDay>=17 && $cMonth==6) || ($cDay<17 && $cMonth==7)){
+    $mujibMonth = 3;
+}
+else if(($cDay>=17 && $cMonth==7) || ($cDay<17 && $cMonth==8)){
+    $mujibMonth = 4;
+}
+else if(($cDay>=17 && $cMonth==8) || ($cDay<17 && $cMonth==9)){
+    $mujibMonth = 5;
+}
+else if(($cDay>=17 && $cMonth==9) || ($cDay<17 && $cMonth==10)){
+    $mujibMonth = 6;
+}
+else if(($cDay>=17 && $cMonth==10) || ($cDay<17 && $cMonth==11)){
+    $mujibMonth = 7;
+}
+else if(($cDay>=17 && $cMonth==11) || ($cDay<17 && $cMonth==12)){
+    $mujibMonth = 8;
+}
+else if(($cDay>=17 && $cMonth==12) || ($cDay<17 && $cMonth==1)){
+    $mujibMonth = 9;
+}
+else if(($cDay>=17 && $cMonth==1) || ($cDay<17 && $cMonth==2)){
+    $mujibMonth = 10;
+}
+else if(($cDay>=17 && $cMonth==2) || ($cDay<17 && $cMonth==3)){
+    $mujibMonth = 11;
+}
+
+
+//get MUJIB date
+if($cDay>=17){
+    $mujibDay = $cDay - 16;
+}
+else{
+    if($mujibMonth == 0){
+        $mujibDay = $cDay + 15;
+    }
+    else if($mujibMonth == 1){
+        $mujibDay = $cDay + 14;
+    }
+    else if($mujibMonth == 2){
+        $mujibDay = $cDay + 15;
+    }
+    else if($mujibMonth == 3){
+        $mujibDay = $cDay + 14;
+    }
+    else if($mujibMonth == 4){
+        $mujibDay = $cDay + 15;
+    }
+    else if($mujibMonth == 5){
+        $mujibDay = $cDay + 15;
+    }
+    else if($mujibMonth == 6){
+        $mujibDay = $cDay + 14;
+    }
+    else if($mujibMonth == 7){
+        $mujibDay = $cDay + 15;
+    }
+    else if($mujibMonth == 8){
+        $mujibDay = $cDay + 14;
+    }
+    else if($mujibMonth == 9){
+        $mujibDay = $cDay + 15;
+    }
+    else if($mujibMonth == 10){
+        $mujibDay = $cDay + 15;
+    }
+    else if($mujibMonth == 11){
+        $mujibDay = $cDay + 12;
+    }
+}
+
+
+//get MUJIB year
+$mujibYear = ($cYear+2000) - 1920;
+
+//split MUJIB year digit by digit to convert it in Bangla digit
+$a = $mujibYear%10;
+$mujibYear/=10;
+$b = $mujibYear%10;
+$mujibYear/=10;
+$c = $mujibYear%10;
+
+
+echo "<b>". $day[$mujibDay-1]. " " . $month[$mujibMonth]. ", " . $digit[$c]. $digit[$b]. $digit[$a] ."</b>";
+
+?>
+
+</font></center>
+
+
+
+
+
