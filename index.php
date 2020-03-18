@@ -72,7 +72,7 @@
 
 <div class='bod'>
 	<div class='title'>ইংরেজি থেকে মুজিববর্ষ তারিখ নির্ণয়</div>
-	<div style='padding:20px'>
+	<div style='padding:20px 5px 20px 5px'>
     <?php include 'convertDate.php';?>
     </div>
 </div>
