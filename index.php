@@ -1,5 +1,5 @@
 <?php include 'header.php';?>
-
+<title>MUJIB BORSHO CALENDAR</title>
 <style>
 .bod{
 	background:#fff;
